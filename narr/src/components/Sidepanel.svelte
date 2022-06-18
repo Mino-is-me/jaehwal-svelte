@@ -4,19 +4,29 @@
     >
     <ul class="parent">
         <li>
-            <Button on:click={temp_event}>CV</Button>
+            <Button on:click={
+                goto($url_cv)
+            }>CV</Button>
+
             <Button>ArtStation</Button>
             <Button>GitHub</Button>
             <Button>LinkedIn</Button>
-            <Button on:click={goto_cv}>Working</Button> 
+
         </li>
     </ul>
-    <!-- 아서 하이요~ -->
+    <ul class='parent'>
+        <li>
+            <Button on:click={
+                goto($url_eve)
+            }>Worked</Button>
+
+            <Button on:click={
+                goto($url_bu)
+            }>Worked</Button> 
+        </li>
+    </ul>
 </Sidepanel>
 <style>
-    .parent {
-        color: blueviolet;
-    }
     ul {
         padding : 10%;
         margin : 10%;
@@ -27,16 +37,17 @@
 </style>
 
 <script>
-    import { side_panel_toggle } from '../store.js';
+    import { side_panel_toggle, url_eve, url_bu, url_cv } from '../store.js';
     import { Sidepanel } from 'svelte-mui';
     import {Button} from 'svelte-mui';
+
 
     function temp_event() {
         console.log('temp_event');
     }
 
-    function goto_cv() {
-        let win = window.open('https://rtzr.ai', '_blank');
+    function goto(_url) {
+        let win = window.open(_url, '_blank');
         win.focus();
     }
 </script>

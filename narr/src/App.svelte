@@ -15,7 +15,7 @@
 			<Button />
 		</div>
 	</nav>		
-	<h1>glad to meet you</h1>
+	<h1>{$master_name}</h1>
 	<Sidepanel />
 	
 </main>
